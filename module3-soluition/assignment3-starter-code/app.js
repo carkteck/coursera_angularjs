@@ -110,12 +110,11 @@
             url: (ApiBasePath + "/menu_items.json"),
           }).then(function (response) {
             items = response.data.menu_items
+            searched = true;  // Check to show Nothing Found
             foundsItems = [];
             for (var i = 0; i < items.length; i++) {
               // Check for searchTerm
-              // console.log("searchTerm", searchTerm);
               if (searchTerm !== undefined && searchTerm != "" ){
-                searched = true;  // Check to show Nothing Found
                 if (items[i].description.toLowerCase().indexOf(searchTerm) >= 0) {
                   foundsItems.push(items[i])
                 };
