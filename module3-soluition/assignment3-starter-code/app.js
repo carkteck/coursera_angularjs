@@ -34,9 +34,15 @@
       };
       return true;
     };
-    vm.searched = function() {
-       return MenuSearchService.hasBeenSearched();
-     };
+
+    vm.showTable = function() {
+      // console.log("hasBeenSearched",MenuSearchService.hasBeenSearched());
+      // console.log("length",vm.items.length);
+      if (MenuSearchService.hasBeenSearched() && vm.items.length>0 ) {
+        return true;
+      };
+      return false;
+    };
   };
 
   NarrowItDownController.$inject = ['MenuSearchService'];

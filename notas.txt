@@ -37,6 +37,5 @@ $scope.addToList = function () {
 
 return value.indexOf(searchValue) !== -1;  // existe el valor
 
-
 function con letra mayuscula. Funciones para crear objetos. se deben llamar:
 var nuevoPerro = new CrearPerro("perruchi")
