@@ -1,0 +1,29 @@
+<!-- <ol>
+  <li ng-repeat="item in list.items">
+    {{ item.name }};{{item.short_name}};{{item.description}}
+    <button ng-click="list.onRemove({index: $index});">Don't want this one!</button>
+  </li>
+</ol>
+<div class="error" ng-if="list.exist()">"Nothing found".</div> -->
+
+<table data-toggle="table" ng-if="list.searched()">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Short name</th>
+            <th>Description</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in list.items">
+            <td>{{$index + 1}} </td>
+            <td>{{ item.name }}</td>
+            <td>{{item.short_name}}</td>
+            <td>{{item.description}}</td>
+            <td><button ng-click="list.onRemove({index: $index});">Don't want this one!</button></td>
+        </tr>
+    </tbody>
+</table>
+<div class="error" ng-if="list.exist()">"Nothing found".</div>

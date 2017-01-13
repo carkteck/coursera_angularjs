@@ -6,3 +6,37 @@ browser-sync start --server --directory --files "**/*"
 git status
 git add .
 git commit -m "First web file"
+
+
+
+<ul>
+  <li ng-repteat="item in shoppingList1"> {{item}}</li>
+</ul>
+
+<ul>
+  <li ng-repteat="item in shoppingList2"> {{item.quantity}}, {{item.name}}</li>
+</ul>
+
+<ul>
+  <li ng-repteat="item in shoppingList2">{{$index +1}} {{item.quantity}}, {{item.name}}</li>
+  // $index listado del indice y empieza en cero.
+</ul>
+<input type="text" ng-model="newItemName" placeholder="item name">
+<input type="text" ng-model="newItemQuantity" placeholder="item quantity">
+<button ng-click="addToList()">Add To List</button>
+
+javascript
+$scope.addToList = function () {
+  var newItem = {
+    name: $scope.newItemName,
+    quantity: $scope.newItemQuantity
+  };
+
+  $scope.shoppingList2.push(newItem);
+};
+
+return value.indexOf(searchValue) !== -1;  // existe el valor
+
+
+function con letra mayuscula. Funciones para crear objetos. se deben llamar:
+var nuevoPerro = new CrearPerro("perruchi")

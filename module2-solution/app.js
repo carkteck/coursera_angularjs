@@ -49,11 +49,11 @@
   function ShoppingListCheckOffService() {
     var service = this;
 
-    var items = [{ name: "cookies", quantity: 10 },
-                { name: "chips", quantity: 3 },
-                { name: "tomatoes", quantity: 4 },
+    var items = [{ name: "grapes", quantity: 10 },
+                { name: "apples", quantity: 3 },
+                { name: "pineapples", quantity: 4 },
                 { name: "bananas", quantity: 7 },
-                { name: "orange", quantity: 8 }];
+                { name: "oranges", quantity: 8 }];
 
 
     var itemsBuyed = [];
