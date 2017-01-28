@@ -63,7 +63,6 @@
         .catch(function (error) {
           console.log("Something went terribly wrong.");
         });
-
     };
 
     nidc.removeItem = function (itemIndex) {

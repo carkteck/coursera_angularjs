@@ -1,0 +1,85 @@
+
+<div class="container">
+  <h2 class="text-center"> Sign up </h2>
+  <form name='signUpCtrlForm' novalidate>
+
+    <input type="text" name="firstName" placeholder="Pick a First Name"
+      class='category-imput'
+      ng-model="signUpCtrl.user.firstName"
+      required
+      minlength="3"
+      ng-maxlength="20">
+      {{ signUpCtrl.user.firstName }}
+      <span
+        ng-if="(signUpCtrlForm.firstName.$error.minlength || signUpCtrlForm.firstName.$error.required) && signUpCtrlForm.firstName.$touched">
+        First Name must be at least 3 characters long
+      </span>
+      <span ng-if="signUpCtrlForm.firstName.$error.maxlength && signUpCtrlForm.firstName.$touched">
+        First Name must not be longer than 20 characters
+      </span>
+      <br>
+
+      <input type="text" name="lastName" placeholder="Pick a Last Name"
+        class='category-imput'
+        ng-model="signUpCtrl.user.lastName"
+        required
+        minlength="3"
+        ng-maxlength="20">
+        {{ signUpCtrl.user.lastName }}
+        <span
+          ng-if="(signUpCtrlForm.lastName.$error.minlength || signUpCtrlForm.lastName.$error.required) && signUpCtrlForm.lastName.$touched">
+          Last Name must be at least 3 characters long
+        </span>
+        <span ng-if="signUpCtrlForm.lastName.$error.maxlength && signUpCtrlForm.lastName.$touched">
+          Last Name must not be longer than 20 characters
+        </span>
+        <br>
+
+        <input type="email" name="email" placeholder="Email"
+          class='category-imput'
+          ng-model="signUpCtrl.user.email"
+          required>
+          {{ signUpCtrl.user.email }}
+          <span ng-if="signUpCtrlForm.email.$invalid && signUpCtrlForm.email.$touched">
+            Must be a valid email address: handle@domain format
+          </span>
+          <br>
+
+        <input type="text" name="phone" placeholder="Phone ###-###-####"
+          class='category-imput'
+          ng-model="signUpCtrl.user.phone"
+          pattern="(\d{3})-(\d{3})-(\d{4})">
+          {{ signUpCtrl.user.phone }}
+          <span ng-if="signUpCtrlForm.phone.$invalid && signUpCtrlForm.phone.$touched">
+            Phone must be in the format ###-###-####.
+          </span>
+          <br>
+
+          <input type="text" name="dish" placeholder="Favorite dish"
+            class='category-imput'
+            capitalize
+            ng-model="signUpCtrl.user.dish"
+            ng-model-options="{ debounce: 100 }"
+            is-item
+            required>
+            {{ signUpCtrl.user.dish }}
+            <span ng-if="signUpCtrlForm.dish.$invalid && signUpCtrlForm.dish.$touched">
+                Ohhhh. No such menu number exists.
+            </span>
+            <br>
+
+    <button ng-disabled="signUpCtrlForm.$invalid"
+            ng-if="!signUpCtrl.saved"
+            ng-class="{'ou  ': isDisabled}"
+            ng-click="signUpCtrl.submit();">Submit</button>
+    <div style="margin-top: 10px;" ng-if="signUpCtrl.saved">
+        Your information has been saved.
+    </div>
+
+      <!-- <div style="margin-top: 10px;">
+        Form valid? {{ signUpCtrlForm.$valid }}
+        {{signUpCtrl.user | json }}
+      </div> -->
+  </form>
+
+</div>
